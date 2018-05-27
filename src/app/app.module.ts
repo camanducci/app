@@ -19,6 +19,8 @@ import { SigninPage } from '../pages/signin/signin';
 //import { Network } from '@ionic-native/network';
 //import { FirebaseAnalytics } from '@ionic-native/firebase-analytics';
 import { OneSignal } from '@ionic-native/onesignal';
+import { ResultPage } from '../pages/result/result';
+
 import {
   GoogleMaps
 } from '@ionic-native/google-maps';
@@ -34,6 +36,7 @@ import {
     ProfilePage,
     SigninPage,
     EducationPage,
+    ResultPage
   ],
 
   imports: [
@@ -55,6 +58,7 @@ import {
     TabsPage,
     ProfilePage,
     EducationPage,
+    ResultPage
   ],
 
   providers: [

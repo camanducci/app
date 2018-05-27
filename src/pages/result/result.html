@@ -1,0 +1,33 @@
+<ion-header>
+        <ion-toolbar>
+                <ion-buttons left>
+                <button ion-button icon-only (click)="modalhide()">
+                        <ion-icon item-right name="ios-close-outline"></ion-icon>
+                </button>
+                </ion-buttons>
+                <ion-title>
+                Parabéns
+                </ion-title>
+        </ion-toolbar>
+        </ion-header>
+        <ion-content>
+        <ion-slides #slider onlyExternal="true" pager="false">
+                <ion-slide class="-green">
+                <div padding>
+                        <i class="fa fa-trophy"></i>
+                        <h3> Distância : 3,5 km </h3>
+                        <h3> Tempo: 12 min </h3>
+                <button color="third" class="-text-white" ion-button block icon-left (click)="presentActionSheet()">
+                        <ion-icon name="md-share" start></ion-icon>
+                        Compartilhar
+                        </button>
+                </div>
+                <ion-footer no-border padding>
+                <button ion-button block color="third" full icon-left class="-text-white" (click)="modalhide()">
+                        <!-- <ion-icon name="ios-close" start></ion-icon> -->
+                        Fechar                     
+                </button>
+                </ion-footer>
+                </ion-slide>
+        </ion-slides>
+        </ion-content>

@@ -1,10 +1,24 @@
 <ion-content>
     <!-- <div class="full-screen" (click)="ranking()">
-        <span>{{Coins}}</span>
+        <span>20</span>
     </div> -->
-    <div id="floating-panel">
-        <ion-input type="text" placeholder="Local de partida" [(ngModel)]="start" id="start" (change)="calculateAndDisplayRoute()" ></ion-input>
-        <ion-input type="text" placeholder="Local de destino" [(ngModel)]="end" id="end" (change)="calculateAndDisplayRoute()" ></ion-input>
+    <div id="floating-panel" *ngIf="search == true">
+        <ion-input type="text" placeholder="Local de partida" [(ngModel)]="start" id="start"></ion-input>
+        <ion-input type="text" placeholder="Local de destino" [(ngModel)]="end" id="end"></ion-input>
     </div>
+    <ion-buttons *ngIf="search == false">
+        <p ion-item>Distância : {{ result.distance }}</p>
+        <p ion-item>Tempo: {{ result.time }}</p>
+    </ion-buttons>
     <div #map id="map"></div>
+    <ion-fab bottom center *ngIf="search == false">
+        <button ion-fab fab-fixed (click)="finish()">
+          <ion-icon name="ios-close" is-active="false"></ion-icon>
+        </button>
+      </ion-fab>
+    <ion-fab bottom center *ngIf="search == true">
+        <button ion-fab fab-fixed (click)="calculateAndDisplayRoute()">
+          <ion-icon name="ios-bicycle"></ion-icon>
+        </button>
+      </ion-fab>
 </ion-content>
