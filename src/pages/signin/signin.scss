@@ -1,0 +1,56 @@
+page-signin {
+    ion-header {
+        .toolbar {
+            position: absolute;
+            .button{
+                color: white;            
+            }
+            .toolbar-background {
+            background: transparent;
+            }
+            .toolbar-title {
+            color: white;
+            }
+        }
+    }
+    ion-footer {
+        .button{
+            color: white;            
+        }
+        .toolbar-background {
+            background: transparent;
+        }
+        .toolbar-title {
+            color: white;
+        }
+    }
+    .-text-white {
+        color: white;
+      }
+    ion-slide {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        
+        ion-icon {
+            zoom: 3.0;
+
+            &.-small {
+            zoom: 1;
+            }
+        }
+        i {
+            zoom: 3.0;
+            &.-small {
+                zoom: 2;
+            }
+        }
+        h3 {
+            width: 100%;
+            display: block;
+        }
+      }
+}

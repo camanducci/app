@@ -1,0 +1,62 @@
+<ion-header>
+        <ion-toolbar>
+           <ion-buttons left>
+              <button ion-button icon-only (click)="modalhide()">
+                 <ion-icon item-right name="ios-close-outline"></ion-icon>
+              </button>
+           </ion-buttons>
+           <ion-title>
+              Login
+           </ion-title>
+        </ion-toolbar>
+     </ion-header>
+     <ion-content>
+        <ion-slides #slider onlyExternal="true" pager="false">
+           <ion-slide class="-green">
+              <form [formGroup]="slideDocumentForm">
+                 <ion-list no-lines padding>
+                    <i class="fa fa-user"></i>
+                    <h3> Seu nome de usuário </h3>
+                    <ion-item>
+                       <ion-input type="text" formControlName="document"placeholder="Nome de usuário" ></ion-input>
+                    </ion-item>
+                 </ion-list >
+                 <ion-footer>
+                    <ion-toolbar>
+                       <ion-buttons right>
+                          <button ion-button  full icon-right class="-text-white" [disabled]="!slideDocumentForm.valid" (click)="submit(this.slideDocumentForm)">
+                          {{ Labels.next }}                      
+                          </button>
+                       </ion-buttons>
+                    </ion-toolbar>
+                 </ion-footer>
+              </form>
+           </ion-slide>
+           <ion-slide class="-green">
+                <form [formGroup]="slidePasswordForm">
+                   <ion-list no-lines padding>
+                      <i class="fa fa-key"></i>
+                      <h3> Sua senha </h3>
+                      <ion-item>
+                         <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+                      </ion-item>
+                   </ion-list>
+                   <ion-footer>
+                      <ion-toolbar>
+                         <ion-buttons left>
+                            <button ion-button  full icon-left class="-text-white" (click)="nextSlide('back')">
+                            {{ Labels.back }}
+                            </button>
+                         </ion-buttons>
+                         <ion-buttons right>
+                            <button ion-button  full icon-right class="-text-white" [disabled]="!slidePasswordForm.valid" (click)="submit(this.slidePasswordForm,true)">
+                            {{ Labels.next }}                      
+                            </button>
+                         </ion-buttons>
+                      </ion-toolbar>
+                   </ion-footer>
+                </form>
+             </ion-slide>
+
+        </ion-slides>
+     </ion-content>

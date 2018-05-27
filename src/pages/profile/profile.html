@@ -1,0 +1,33 @@
+<ion-header>
+        <ion-navbar>
+           <ion-title>Configurações</ion-title>
+        </ion-navbar>
+     </ion-header>
+     <ion-content>
+        <ion-list text-wrap>
+            <button ion-item>
+                <ion-icon name="ios-document" item-start></ion-icon>
+                Documentos
+                <p>Seus documentos</p>
+            </button>
+            <button ion-item (click)="promocionalCode()">
+            <ion-icon name="ios-barcode-outline" item-start></ion-icon>
+            Eu tenho código referencial
+            <p>Ajude sua indicação a ganhar 25 pontos </p>
+            </button>
+            <button ion-item (click)="referencialCode()" >
+            <ion-icon name="ios-person-add-outline" item-start></ion-icon>
+            Meu código referencial
+            <p>Ganhe 25 pontos por cada indicação</p>
+            </button>
+            <button ion-item (click)="referencialCode()" >
+            <ion-icon name="ios-person-add-outline" item-start></ion-icon>
+            Notificações
+            <p>Notificações que desejo receber</p>
+            </button>
+           <button ion-item (click)="signOut()">
+            <ion-icon name="ios-log-in" item-start></ion-icon>
+           Sair
+           </button>
+        </ion-list>
+     </ion-content>

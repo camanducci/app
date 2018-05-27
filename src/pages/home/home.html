@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Histórico</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-list-header>
+            Viagens
+        </ion-list-header>
+        <button ion-item *ngFor="let item of List" (click)="checkClick(item)">
+            <ion-icon name="{{item.icon}}" item-start></ion-icon>
+            <h2 text-wrap>{{item.name}}</h2>
+            <p>{{item.text}}</p>
+            <ion-badge color="golds" item-end>{{item.date}}</ion-badge>
+        </button>
+    </ion-list> 
+</ion-content>

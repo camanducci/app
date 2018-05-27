@@ -1,0 +1,104 @@
+<ion-header>
+        <ion-toolbar>
+           <ion-buttons left>
+              <button ion-button icon-only (click)="modalhide()">
+                 <ion-icon item-right name="ios-close-outline"></ion-icon>
+              </button>
+           </ion-buttons>
+           <ion-title>
+              Cadastro
+           </ion-title>
+        </ion-toolbar>
+     </ion-header>
+     <ion-content>
+        <ion-slides #slider onlyExternal="true" pager="false">
+            <ion-slide class="-green">
+                <div padding>
+                        <button color="third" class="-text-white" ion-button block icon-left (click)="nextSlide()">
+                                <ion-icon name="ios-mail" start></ion-icon>
+                                Criar conta 
+                        </button>
+                        <button color="facebook" ion-button block icon-left>
+                            <ion-icon name="logo-facebook" start></ion-icon>
+                            Facebook 
+                      </button>
+                        
+                    </div>
+                    <ion-footer no-border>
+                        <p class="linkText spaceTop"> <strong>Ao prosseguir você concorda com os <u>Termos & Condições</u> </strong>  </p>
+                        
+                      </ion-footer>
+                </ion-slide>
+           <ion-slide class="-green">
+              <form [formGroup]="slideDocumentForm">
+                 <ion-list no-lines padding>
+                    <i class="fa fa-user"></i>
+                    <h3> Seu CPF </h3>
+                    <ion-item>
+                       <ion-input type="text" formControlName="document" placeholder="Seu CPF"></ion-input>
+                    </ion-item>
+                 </ion-list >
+                 <ion-footer>
+                    <ion-toolbar>
+                       <ion-buttons right>
+                          <button ion-button  full icon-right class="-text-white" [disabled]="!slideDocumentForm.valid" (click)="submit(this.slideDocumentForm)">
+                          {{ Labels.next }}                      
+                          </button>
+                       </ion-buttons>
+                    </ion-toolbar>
+                 </ion-footer>
+              </form>
+           </ion-slide>
+           <ion-slide class="-green">
+                <form [formGroup]="slideEmailForm">
+                   <ion-list no-lines padding>
+                      <i class="fa fa-user"></i>
+                      <h3> Seu e-mail</h3>
+                      <ion-item>
+                         <ion-input type="text" formControlName="email" placeholder=""></ion-input>
+                      </ion-item>
+                   </ion-list >
+                   <ion-footer>
+                      <ion-toolbar>
+                          <ion-buttons left>
+                              <button ion-button  full icon-left class="-text-white" (click)="nextSlide('back')">
+                              {{ Labels.back }}
+                              </button>
+                           </ion-buttons>
+                         <ion-buttons right>
+                            <button ion-button  full icon-right class="-text-white" [disabled]="!slideEmailForm.valid" (click)="submit(this.slideDocumentForm)">
+                            {{ Labels.next }}                      
+                            </button>
+                         </ion-buttons>
+                      </ion-toolbar>
+                   </ion-footer>
+                </form>
+             </ion-slide>
+           <ion-slide class="-green">
+                <form [formGroup]="slidePasswordForm">
+                   <ion-list no-lines padding>
+                      <i class="fa fa-key"></i>
+                      <h3> Sua senha</h3>
+                      <ion-item>
+                         <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+                      </ion-item>
+                   </ion-list>
+                   <ion-footer>
+                      <ion-toolbar>
+                         <ion-buttons left>
+                            <button ion-button  full icon-left class="-text-white" (click)="nextSlide('back')">
+                            {{ Labels.back }}
+                            </button>
+                         </ion-buttons>
+                         <ion-buttons right>
+                            <button ion-button  full icon-right class="-text-white" [disabled]="!slidePasswordForm.valid" (click)="submit(this.slidePasswordForm,true)">
+                            {{ Labels.next }}                      
+                            </button>
+                         </ion-buttons>
+                      </ion-toolbar>
+                   </ion-footer>
+                </form>
+             </ion-slide>
+
+        </ion-slides>
+     </ion-content>
