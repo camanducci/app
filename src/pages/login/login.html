@@ -12,13 +12,26 @@
      </ion-header>
      <ion-content>
         <ion-slides #slider onlyExternal="true" pager="false">
+        <ion-slide class="-green">
+        <div padding>
+                <button color="third" class="-text-white" ion-button block icon-left (click)="nextSlide()">
+                        <ion-icon name="ios-mail" start></ion-icon>
+                        Normal 
+                </button>
+                <button color="facebook" ion-button block icon-left (click)="finally()">
+                        <ion-icon name="logo-facebook" start></ion-icon>
+                        Facebook 
+                </button>
+                
+                </div>
+        </ion-slide>
            <ion-slide class="-green">
               <form [formGroup]="slideDocumentForm">
                  <ion-list no-lines padding>
                     <i class="fa fa-user"></i>
-                    <h3> Seu nome de usuário </h3>
+                    <h3> Seu CPF </h3>
                     <ion-item>
-                       <ion-input type="text" formControlName="document"placeholder="Nome de usuário" ></ion-input>
+                       <ion-input type="text" formControlName="document"placeholder="Seu CPF" ></ion-input>
                     </ion-item>
                  </ion-list >
                  <ion-footer>
@@ -36,7 +49,7 @@
                 <form [formGroup]="slidePasswordForm">
                    <ion-list no-lines padding>
                       <i class="fa fa-key"></i>
-                      <h3> Sua senha </h3>
+                      <h3>Sua senha</h3>
                       <ion-item>
                          <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
                       </ion-item>
