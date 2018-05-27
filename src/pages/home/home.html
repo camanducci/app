@@ -1,15 +1,22 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>Histórico</ion-title>
-    </ion-navbar>
-</ion-header>
+        <ion-toolbar>
+           <ion-buttons left>
+              <button ion-button icon-only (click)="modalhide()">
+                 <ion-icon item-right name="ios-close-outline"></ion-icon>
+              </button>
+           </ion-buttons>
+           <ion-title>
+                Histórico
+           </ion-title>
+        </ion-toolbar>
+     </ion-header>
 <ion-content>
     <ion-list>
         <ion-list-header>
             Viagens
         </ion-list-header>
-        <button ion-item *ngFor="let item of List" (click)="checkClick(item)">
-            <ion-icon name="{{item.icon}}" item-start></ion-icon>
+        <button ion-item *ngFor="let item of List">
+            <ion-icon name="{{item.icon}}" color="{{item.color}}" item-start></ion-icon>
             <h2 text-wrap>{{item.name}}</h2>
             <p>{{item.text}}</p>
             <ion-badge color="golds" item-end>{{item.date}}</ion-badge>

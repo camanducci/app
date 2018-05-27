@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Financeiro</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <button ion-item (click)="historic()">
+                <ion-icon name="ios-unlock" color="success" item-start></ion-icon>
+                <h2 text-wrap>R$ 27,30</h2>
+                <p>Diponivel</p>
+        </button>
+        <button ion-item>
+                <ion-icon name="ios-lock" color="red" item-start></ion-icon>
+                <h2 text-wrap>R$ 80,60</h2>
+                <p>Bloqueado</p>
+        </button>
+        <button ion-item>
+                <ion-icon name="ios-card" item-start></ion-icon>
+                <h2 text-wrap>R$ 107,90</h2>
+                <p>Bilhete único</p>
+        </button>
+    </ion-list> 
+</ion-content>

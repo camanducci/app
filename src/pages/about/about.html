@@ -1,0 +1,30 @@
+<ion-header>
+        <ion-toolbar>
+           <ion-buttons left>
+              <button ion-button icon-only (click)="modalhide()">
+                 <ion-icon item-right name="ios-close-outline"></ion-icon>
+              </button>
+           </ion-buttons>
+           <ion-title>
+              Sobre
+           </ion-title>
+        </ion-toolbar>
+     </ion-header>
+     <ion-content>
+        <ion-slides #slider onlyExternal="true" pager="false">
+        <ion-slide class="-green">
+        <div padding text-wrap text-left>
+Hack'n Bike - São Paulo - 27/05/2018<br><br>
+Agradecemos a todos os patrocinadores e equipes por 
+possibilitar nossa equipe fazer um pouco pela
+nossa cidade e pela população.<br><br>
+Parabenizamos o Excelentíssimo Vereador Police Neto
+pela incrível iniciativa da Lei Nº 16.547.
+<br>
+Você é o cara!
+<img src="assets/imgs/police.png" height="25">
+                
+                </div>
+        </ion-slide>
+        </ion-slides>
+     </ion-content>

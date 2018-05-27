@@ -4,6 +4,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { WelcomePage } from '../welcome/welcome';
 //import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { RestProvider } from '../../providers/rest/rest';
+import { AboutPage } from '../about/about';
 
 @Component({
   selector: 'page-profile',
@@ -32,6 +33,11 @@ export class ProfilePage {
 
   loadThisPageBitch(){
 
+  }
+
+  about()
+  {
+    this.goToPage(AboutPage);
   }
 
   goToPage(Page) {

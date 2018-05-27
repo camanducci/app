@@ -8,23 +8,18 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
-//import { Ionic2RatingModule } from 'ionic2-rating';
+import { AboutPage } from '../pages/about/about';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { RestProvider } from '../providers/rest/rest';
 import { EducationPage } from '../pages/education/education';
 import { SigninPage } from '../pages/signin/signin';
-//import { InAppBrowser } from '@ionic-native/in-app-browser';
-//import { Network } from '@ionic-native/network';
-//import { FirebaseAnalytics } from '@ionic-native/firebase-analytics';
 import { OneSignal } from '@ionic-native/onesignal';
 import { ResultPage } from '../pages/result/result';
-
-import {
-  GoogleMaps
-} from '@ionic-native/google-maps';
-
+import { CashPage } from '../pages/cash/cash';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Ionic2RatingModule } from 'ionic2-rating';
 
 @NgModule({
   declarations: [
@@ -36,7 +31,9 @@ import {
     ProfilePage,
     SigninPage,
     EducationPage,
-    ResultPage
+    ResultPage,
+    CashPage,
+    AboutPage
   ],
 
   imports: [
@@ -45,6 +42,7 @@ import {
     scrollAssist: false,    
     autoFocusAssist: false  }),
     HttpModule,
+    Ionic2RatingModule 
   ],
 
   bootstrap: [IonicApp],
@@ -58,7 +56,9 @@ import {
     TabsPage,
     ProfilePage,
     EducationPage,
-    ResultPage
+    ResultPage,
+    CashPage,
+    AboutPage
   ],
 
   providers: [
@@ -67,9 +67,8 @@ import {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     RestProvider,
-    RestProvider,
     OneSignal,
-    GoogleMaps,
+    LaunchNavigator,
   ]
 })
 

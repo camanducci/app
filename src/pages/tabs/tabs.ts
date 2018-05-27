@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomePage } from '../home/home';
+import { CashPage } from '../cash/cash';
 import { ProfilePage } from '../profile/profile';
 import { EducationPage } from '../education/education';
 import { Platform } from 'ionic-angular';
@@ -10,7 +10,7 @@ import { Platform } from 'ionic-angular';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
+  tab1Root = CashPage;
   tab2Root = EducationPage;
   tab3Root = ProfilePage;
 

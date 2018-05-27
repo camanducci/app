@@ -3,11 +3,11 @@ import { App, NavController,ActionSheetController,ModalController,ViewController
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-about',
+  templateUrl: 'about.html'
 })
 
-export class HomePage {
+export class AboutPage {
 
   List : any[];
   ListAnalyze : any[];

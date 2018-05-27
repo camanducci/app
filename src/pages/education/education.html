@@ -7,15 +7,27 @@
         <ion-input type="text" placeholder="Local de destino" [(ngModel)]="end" id="end"></ion-input>
     </div>
     <ion-buttons *ngIf="search == false">
+        <p ion-item>Origem : {{ start }}</p>
+        <p ion-item>Destino : {{ end }}</p>
         <p ion-item>Distância : {{ result.distance }}</p>
         <p ion-item>Tempo: {{ result.time }}</p>
     </ion-buttons>
     <div #map id="map"></div>
-    <ion-fab bottom center *ngIf="search == false">
-        <button ion-fab fab-fixed (click)="finish()">
+    <ion-fab bottom center *ngIf="search == false && bora == false">
+        <button ion-fab fab-fixed>
           <ion-icon name="ios-close" is-active="false"></ion-icon>
         </button>
       </ion-fab>
+    <ion-fab bottom left *ngIf="bora == true">
+        <button ion-fab fab-fixed (click)="initMap()" color="red">
+          <ion-icon name="ios-close"></ion-icon>
+        </button>
+    </ion-fab>
+    <ion-fab bottom right *ngIf="bora == true">
+            <button ion-fab fab-fixed (click)="presentActionSheet()" color="success">
+              <ion-icon name="ios-checkmark"></ion-icon>
+            </button>
+    </ion-fab>
     <ion-fab bottom center *ngIf="search == true">
         <button ion-fab fab-fixed (click)="calculateAndDisplayRoute()">
           <ion-icon name="ios-bicycle"></ion-icon>

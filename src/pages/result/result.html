@@ -6,7 +6,7 @@
                 </button>
                 </ion-buttons>
                 <ion-title>
-                Parabéns
+                <!-- Parabéns -->
                 </ion-title>
         </ion-toolbar>
         </ion-header>
@@ -14,16 +14,24 @@
         <ion-slides #slider onlyExternal="true" pager="false">
                 <ion-slide class="-green">
                 <div padding>
-                        <i class="fa fa-trophy"></i>
-                        <h3> Distância : 3,5 km </h3>
-                        <h3> Tempo: 12 min </h3>
-                <button color="third" class="-text-white" ion-button block icon-left (click)="presentActionSheet()">
+                        <i  *ngIf="finish==false" class="fa fa-clock-o"></i>
+                        <i  *ngIf="finish==true" class="fa fa-trophy"></i>
+                        <h3> Distância : {{DataParams.distance}} </h3>
+                        <h3> Tempo calculado: {{DataParams.time}} </h3>
+                        <span id="chronotime">00:00:00</span>
+                        <rating max="5" (ngModelChange)="thanks()" item-end></rating>
+
+                <button color="light" *ngIf="finish==false" ion-button block icon-left (click)="submit()">
+                <ion-icon name="ios-stopwatch" start></ion-icon>
+                Finalizar
+                </button>
+                <button color="third" class="-text-white" *ngIf="finish==true" ion-button block icon-left (click)="presentActionSheet()">
                         <ion-icon name="md-share" start></ion-icon>
                         Compartilhar
                         </button>
                 </div>
                 <ion-footer no-border padding>
-                <button ion-button block color="third" full icon-left class="-text-white" (click)="modalhide()">
+                <button ion-button block color="third" *ngIf="finish==true" full icon-left class="-text-white" (click)="modalhide()">
                         <!-- <ion-icon name="ios-close" start></ion-icon> -->
                         Fechar                     
                 </button>
