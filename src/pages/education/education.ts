@@ -1,6 +1,7 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {Platform} from "ionic-angular";
-import {GoogleMaps, GoogleMap, LatLng, GoogleMapsEvent} from "@ionic-native/google-maps";
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+declare var google;
 
 @Component({
   selector: 'page-education',
@@ -8,47 +9,43 @@ import {GoogleMaps, GoogleMap, LatLng, GoogleMapsEvent} from "@ionic-native/goog
 })
 export class EducationPage {
 
-  @ViewChild('map')
-  private mapElement:ElementRef;
-  private map:GoogleMap;
-  private location:LatLng;
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+  start = 'Av. Braz Leme, 1000 - Santana, São Paulo - SP';
+  end = 'Estação Barra Funda';
+  directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer;
 
-  constructor(private platform:Platform,
-              private googleMaps:GoogleMaps) {
-    this.location = new LatLng(42.346903, -71.135101);
+  constructor(public navCtrl: NavController) {
+
   }
 
-  ionViewDidLoad() {
-    this.platform.ready().then(() => {
-      let element = this.mapElement.nativeElement;
-      this.map = this.googleMaps.create(element);
+  ionViewDidLoad(){
+    this.initMap();
+  }
 
-      this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
-        let options = {
-          target: this.location,
-          zoom: 8
-        };
-
-        this.map.moveCamera(options);
-        setTimeout(() => {this.addMarker()}, 2000);
-      });
+  initMap() {
+    this.map = new google.maps.Map(this.mapElement.nativeElement, {
+      zoom: 15,
+      center: {lat: -23.508521, lng: -46.651327}
     });
+    this.directionsDisplay.setMap(this.map);
   }
 
-  addMarker() {
-    this.map.addMarker({
-      title: 'My Marker',
-      icon: 'blue',
-      animation: 'DROP',
-      position: {
-        lat: this.location.lat,
-        lng: this.location.lng
+  calculateAndDisplayRoute() {
+    console.log( this.start );
+    this.directionsService.route({
+      origin: this.start,
+      destination: this.end,
+      travelMode: 'DRIVING'
+    }, (response, status) => {
+      if (status === 'OK') {
+        this.directionsDisplay.setDirections(response);
+      } else {
+        console.log(response)
+        // window.alert('Directions request failed due to ' + status);
       }
-    })
-    .then(marker => {
-      marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-        alert('Marker Clicked');
-      });
     });
   }
+
 }

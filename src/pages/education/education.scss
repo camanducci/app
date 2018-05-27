@@ -1,5 +1,5 @@
-ion-app._gmaps_cdv_ .nav-decor{
-  background-color: transparent !important;
+.gm-style-mtc {
+  display: none;
 }
 
 page-education {
@@ -12,9 +12,25 @@ page-education {
     //border: 2px solid map-get($colors, green);
   }
  
+  #floating-panel {
+    position: absolute;
+    // top: 10px;
+    right: 5px;
+    z-index: 999999;
+    background-color: transparent;
+    padding: 5px;
+    // border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    width : 97%;
+  }
+  .input{
+    margin-top: 5px;
+    background: #fff;
+  }
   #map {
     height: 100%;
-    background: red;
   }
 }
 

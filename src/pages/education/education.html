@@ -2,6 +2,9 @@
     <!-- <div class="full-screen" (click)="ranking()">
         <span>{{Coins}}</span>
     </div> -->
-        <div #map id="map" class="map"></div>
-
+    <div id="floating-panel">
+        <ion-input type="text" placeholder="Local de partida" [(ngModel)]="start" id="start" (change)="calculateAndDisplayRoute()" ></ion-input>
+        <ion-input type="text" placeholder="Local de destino" [(ngModel)]="end" id="end" (change)="calculateAndDisplayRoute()" ></ion-input>
+    </div>
+    <div #map id="map"></div>
 </ion-content>
